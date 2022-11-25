@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/yarullin/OS-Labs/lab3/main.cpp
+lab3.h
+/home/yarullin/OS-Labs/lab3/lab3.h
+iostream
+-
+
+/home/yarullin/OS-Labs/lab3/src/lab3.cpp
+lab3.h
+/home/yarullin/OS-Labs/lab3/src/lab3.h
+stdio.h
+-
+iostream
+-
+stdlib.h
+-
+pthread.h
+-
+vector
+-
+
+include/lab3.h
+vector
+-
+

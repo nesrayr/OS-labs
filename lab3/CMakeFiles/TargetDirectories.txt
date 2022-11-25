@@ -1,0 +1,3 @@
+/home/yarullin/OS-Labs/lab3/CMakeFiles/rebuild_cache.dir
+/home/yarullin/OS-Labs/lab3/CMakeFiles/edit_cache.dir
+/home/yarullin/OS-Labs/lab3/CMakeFiles/lab3.dir

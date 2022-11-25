@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/lab3.dir/main.o CMakeFiles/lab3.dir/src/lab3.o  -o lab3  -lThreads::Threads 
