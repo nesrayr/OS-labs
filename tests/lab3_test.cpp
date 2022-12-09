@@ -23,18 +23,18 @@ namespace {
 
 TEST(ThirdLabTests, SingleThreadYieldsCorrectResults) {
     std::vector<int> arr1 = {99, 59, 19, 9, 1};
-    std::sort(arr1, 1);
-    std::vector<int> out1 = {1, 9, 19, 59, 99};
+    MergeSortArr(arr1, 1);
+    std::vector<int> out1 = std::sort(arr1.begin(), arr1.end());
     ExpectEqCheck(arr1, out1);
 
     std::vector<int> arr2 = {1,2,3,4,5,6,7,8,9,10};
-    std::sort(arr2, 1);
+    MergeSortArr(arr2, 1);
     std::vector<int> out2 = {1,2,3,4,5,6,7,8,9,10};
     ExpectEqCheck(arr2, out2);
 
     std::vector<int> arr3 = {5,38,79,85,2,1,3,2,99,13,11,17,85,62,4};
-    std::sort(arr3, 1);
-    std::vector<int> out3 = {1,2,2,3,4,5,11,13,17,38,62,79,85,85,99};
+    MergeSortArr(arr3, 1);
+    std::vector<int> out3 = std::sort(arr3.begin(), arr3.end());
     ExpectEqCheck(arr3, out3);
 }
 
@@ -42,10 +42,10 @@ TEST(ThirdLabTest, ThreadConfigurations) {
     auto performTestForGivenSize = [](int length, int maxThreadCount) {
         std::vector<int> arr = GenerateArray(length);
         std::vector<int> arr1 = arr;
-        std::sort(arr1, 1);
+        MergeSortArr(arr1, 1);
 
         for(int i = 2; i < maxThreadCount; ++i) {
-            std::sort(arr, i);
+            MergeSortArr(arr, i);
             ExpectEqCheck(arr, arr1);
         }
     };
@@ -66,7 +66,7 @@ TEST(ThirdLabTest, PerfomanceTest) {
 
         for(int i = 0; i < runsCount; ++i) {
             auto begin = std::chrono::high_resolution_clock::now();
-            std::sort(arr, threadCount);
+            MergeSortArr(arr, threadCount);
             auto end = std::chrono::high_resolution_clock::now();
             avg += std::chrono::duration_cast<std::chrono::milliseconds>(end - begin).count();
         }
